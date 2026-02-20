@@ -1,39 +1,63 @@
-# mpv for Android
+# mpv VR for Android
 
-[![Build Status](https://github.com/mpv-android/mpv-android/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/mpv-android/mpv-android/actions/workflows/build.yml)
+A Proof of concept VR Android video player that supports Xreal One Pro head tracking.
 
-mpv-android is a video player for Android based on [libmpv](https://github.com/mpv-player/mpv).
+**This is not production ready, it's just a POC that works.**
 
-## Features
+It is meant to be an inspiration for others to refine and further develop a better app.
 
-* Hardware and software video decoding
-* Gesture-based seeking, volume/brightness control and more
-* libass support for styled subtitles
-* Secondary (or dual) subtitle support
-* High-quality rendering with advanced settings (scalers, debanding, interpolation, ...)
-* Play network streams with the "Open URL" function
-* Background playback, Picture-in-Picture, keyboard input supported
+### What's working?
 
-### Library?
+- Projections:
+  - equirectangular
+  - dual fisheye
+  - dual half equirectangular
+  - half equirectangular
+  - dual vert_equirectangular
+  - cylindrical
+  - equiangular cubemap
+  - dual equiangular cubemap
+- Eye outputs:
+  - left
+  - right 
+  - half sbs
+  - full sbs
+- Camera controls:
+  - Touch
+  - Xreal One Pro head tracking 
+  - FOV/Fish eye FOV controls
 
-mpv-android is **not** a library/module (AAR) you can import into your app.
+### What's this?
 
-If you'd like to use libmpv in your app you can use our code as inspiration.
-The important parts are [`MPVLib`](app/src/main/java/is/vr/mpv/MPVLib.kt), [`BaseMPVView`](app/src/main/java/is/vr/mpv/BaseMPVView.kt) and the [native code](app/src/main/jni/).
-Native code is built by [these scripts](buildscripts/).
+I've put together multiple projects to create a POC Xreal Android VR player:
 
-## Downloads
+- https://github.com/mpv-android/mpv-android 
+- https://github.com/kasper93/mpv360
+- https://www.reddit.com/r/Xreal/comments/1plx34z/xreal_one_android_sdk_working_without_unity_or
+- https://github.com/SamiMitwalli/One-Pro-IMU-Retriever-Demo
 
-You can download mpv-android from the [Releases section](https://github.com/mpv-android/mpv-android/releases) or
+And I've done some adjustments:
 
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=vr.mpv)
+- adapted mpv360.glsl shader to work on Android
+- implemented Kotlin controller for the mpv360 shader (removed the lua scripting)
+- added VR specific buttons to the MPV Video player
+- implemented Xreal One Pro head tracking controls based on Xreal Framework
+- implemented a basic smoothing algorithm for the Xreal IMU data for head tracking
 
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/vr.mpv)
+### How to compile and run
 
-**Note**: Android TV is supported, but only available on F-Droid or by installing the APK manually.
+Import the project in Android Studio and run it as a normal Android app. 
 
-## Building from source
+I've included the precompiled binaries for **arm64-v8a**. If you want to build them yourself, you have to check the guide from MPV Android: https://github.com/mpv-android/mpv-android/tree/master/buildscripts
 
-Take a look at the [README](buildscripts/README.md) inside the `buildscripts` directory.
+I've included also the Xreal framework.jar nrcontroller.jar sparrow.jar files from their APK. 
 
-Some other documentation can be found at this [link](http://mpv-android.github.io/mpv-android/).
+### Tags / Keywords
+
+Android VR XR SBS 3D 180 360 video player with support for Xreal One / Xreal One Pro head tracking IMU data
+
+Android Xreal VR video player
+
+Android 3D VR video player
+
+Android 180 video player
