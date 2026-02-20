@@ -1,6 +1,6 @@
 # mpv VR for Android
 
-A Proof of concept VR Android video player that supports Xreal One Pro head tracking.
+A Proof of concept VR Android video player that supports Xreal One Pro head tracking based on [mpv Android](https://github.com/mpv-android/mpv-android).
 
 **This is not production ready, it's just a POC that works.**
 
