@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        app:iconSpaceReserved="false"
+        android:key="gpu_next"
+        android:summary="@string/pref_gpu_next_summary"
+        android:title="@string/pref_gpu_next_title" />
+
+    <is.vr.mpv.preferences.ConfigEditDialogPreference
+        app:iconSpaceReserved="false"
+        app:filename="mpv.conf"
+        android:title="@string/pref_edit_mpv_conf"
+        app:dialogMessage="@string/pref_edit_mpv_conf_message" />
+
+    <is.vr.mpv.preferences.ConfigEditDialogPreference
+        app:iconSpaceReserved="false"
+        app:filename="input.conf"
+        android:title="@string/pref_edit_input_conf"
+        app:dialogMessage="@string/pref_edit_input_conf_message" />
+
+    <EditTextPreference
+        android:defaultValue=""
+        android:key="http_auth"
+        app:useSimpleSummaryProvider="true"
+        app:iconSpaceReserved="false"
+        android:hint=""
+        android:title="HTTP Auth user:password" />
+
+
+</PreferenceScreen>

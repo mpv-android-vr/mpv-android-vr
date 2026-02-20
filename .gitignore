@@ -1,0 +1,12 @@
+.gdb_history
+bin
+gen
+obj
+.gradle
+.idea
+**/*.iml
+build
+local.properties
+*~
+.kotlin
+/app/default/

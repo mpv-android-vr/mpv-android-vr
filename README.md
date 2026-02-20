@@ -1,16 +1,39 @@
-## Hi there 👋
+# mpv for Android
 
-<!--
-**mpv-android-vr/mpv-android-vr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+[![Build Status](https://github.com/mpv-android/mpv-android/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/mpv-android/mpv-android/actions/workflows/build.yml)
 
-Here are some ideas to get you started:
+mpv-android is a video player for Android based on [libmpv](https://github.com/mpv-player/mpv).
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Features
+
+* Hardware and software video decoding
+* Gesture-based seeking, volume/brightness control and more
+* libass support for styled subtitles
+* Secondary (or dual) subtitle support
+* High-quality rendering with advanced settings (scalers, debanding, interpolation, ...)
+* Play network streams with the "Open URL" function
+* Background playback, Picture-in-Picture, keyboard input supported
+
+### Library?
+
+mpv-android is **not** a library/module (AAR) you can import into your app.
+
+If you'd like to use libmpv in your app you can use our code as inspiration.
+The important parts are [`MPVLib`](app/src/main/java/is/vr/mpv/MPVLib.kt), [`BaseMPVView`](app/src/main/java/is/vr/mpv/BaseMPVView.kt) and the [native code](app/src/main/jni/).
+Native code is built by [these scripts](buildscripts/).
+
+## Downloads
+
+You can download mpv-android from the [Releases section](https://github.com/mpv-android/mpv-android/releases) or
+
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=vr.mpv)
+
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/vr.mpv)
+
+**Note**: Android TV is supported, but only available on F-Droid or by installing the APK manually.
+
+## Building from source
+
+Take a look at the [README](buildscripts/README.md) inside the `buildscripts` directory.
+
+Some other documentation can be found at this [link](http://mpv-android.github.io/mpv-android/).
